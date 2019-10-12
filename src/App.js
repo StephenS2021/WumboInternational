@@ -1,26 +1,30 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Forum from './Components/Forum/Forum'
+import Display from './Components/Display/Display'
 
-function App() {
+class App extends React.Component {
+  state = {
+    comments:[]
+  }
+  changeComments = (comment) =>{
+    console.log(this);
+    let comments = this.state.comments
+    comments.push(comment)
+    this.setState({comments})
+    
+  }
+  render(){
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Forum onPress={this.changeComments} />
+      <Display comments = {this.state.comments} />
     </div>
   );
+  }
 }
 
 export default App;
