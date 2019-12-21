@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Forum from './Components/Forum/Forum'
 import Display from './Components/Display/Display'
+import commentsService from './commentsService'
 
 class App extends React.Component {
   state = {
@@ -14,6 +15,15 @@ class App extends React.Component {
     comments.push(comment)
     this.setState({comments})
     
+  }
+
+  componentDidMount(){
+    commentsService.getComments()
+    .then(result =>
+      this.setState({
+        comments: result
+      })
+      )
   }
   render(){
 

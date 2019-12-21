@@ -7,7 +7,7 @@ class Display extends React.Component{
         let comments = []
         this.props.comments.forEach(comment => {
             console.log(comment)
-            comments.push(<Show firstname = {comment.firstname} comment = {comment.message} ></Show>)
+            comments.push(<Show firstname = {comment.username} comment = {comment.content} ></Show>)
 
         });
         return(
