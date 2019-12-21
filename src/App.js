@@ -31,7 +31,7 @@ class App extends React.Component {
     <div className="App">
       
       <Forum onPress={this.changeComments} />
-      <Display comments = {this.state.comments} />
+      <Display comments = {this.state.comments}/>
     </div>
   );
   }

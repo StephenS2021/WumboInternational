@@ -1,5 +1,6 @@
 import React from 'react';
 import Show from '../Show/Show';
+import './display.css'
 
 
 class Display extends React.Component{
@@ -11,7 +12,7 @@ class Display extends React.Component{
 
         });
         return(
-            <div>
+            <div className = "messageText">
                {comments} 
 
             </div>

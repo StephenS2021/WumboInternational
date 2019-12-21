@@ -6,7 +6,7 @@ class Show extends React.Component{
             <div>
                 <br />
                 
-                {this.props.firstname}:{this.props.comment}
+                {this.props.firstname}: {this.props.comment}
                 <br />
             </div>
         )

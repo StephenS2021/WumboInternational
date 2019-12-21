@@ -1,5 +1,6 @@
 import React from 'react';
 import commentsService from "../../commentsService"
+import './forum.css'
 
 class forum extends React.Component {
     state = {
@@ -22,17 +23,16 @@ class forum extends React.Component {
             this.props.onPress(result)
         })
     }
-
+    
     render(){
         return(
-            <form onSubmit = {(event)=>this.post(event)} >
+            <form onSubmit = {(event)=>this.post(event)} className = 'form'>
                 
-                First Name:<input onChange={(event) =>this.firstNameChange(event.target.value)} type = 'text' name='username' />
+                Username: <input onChange={(event) =>this.firstNameChange(event.target.value)} type = 'text' name='username' />
                 <br/>
-                message:<textarea onChange={(event) => this.messageChange(event.target.value)} rows='5' cols='10' type = 'text' name='content'></textarea><br/>
+                Message: <textarea onChange={(event) => this.messageChange(event.target.value)} rows='2' cols='10' type = 'text' name='content'></textarea><br/>
 
-                <button type = 'submit'  >Send</button>
-                
+                <button type = 'submit' >Send</button>
                 
             </form>
         )
